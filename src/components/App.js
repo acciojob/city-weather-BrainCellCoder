@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../styles/App.css";
 
-const App = () => {
+export const App = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
 
@@ -45,5 +45,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
