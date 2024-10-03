@@ -28,12 +28,13 @@ export const App = () => {
     }
   }, [city]);
   return (
-    <div>
+    <div id="main">
       {/* Do not remove the main div */}
       <input
         className="search"
         type="text"
         onChange={(e) => setCity(e.target.value)}
+        placeholder="Enter a city"
       />
       {weather && (
         <div className="weather">
