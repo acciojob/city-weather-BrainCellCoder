@@ -29,7 +29,7 @@ export const App = () => {
   }, [city]);
   return (
     <div id="main">
-      {/* Do not remove the main div */}
+      {/* Do not remove the main divasd */}
       <input
         className="search"
         type="text"
