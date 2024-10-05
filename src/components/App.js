@@ -18,6 +18,7 @@ export const App = () => {
           temp: data?.main?.temp,
           sky: data?.weather[0]?.description,
         };
+        setCity("");
         setWeather(DATA);
       })
       .catch((e) => {
@@ -35,6 +36,7 @@ export const App = () => {
       {/* Do not remove the main divasd */}
       <input
         className="search"
+        value={city}
         type="text"
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter a city"
