@@ -18,27 +18,30 @@ export const App = () => {
           temp: data?.main?.temp,
           sky: data?.weather[0]?.description,
         };
-        setCity("");
         setWeather(DATA);
+        setCity("");
       })
       .catch((e) => {
         setWeather("");
-        console.error(e); // Log any errors
+        console.error(e);
       });
   };
 
-  useEffect(() => {
-    getWeather();
-  }, [city]);
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      getWeather();
+    }
+  };
 
   return (
     <div id="main">
-      {/* Do not remove the main divasd */}
+      {/* Do not remove the main div */}
       <input
         className="search"
         value={city}
         type="text"
         onChange={(e) => setCity(e.target.value)}
+        onKeyPress={handleKeyPress}
         placeholder="Enter a city"
       />
       {weather && (
